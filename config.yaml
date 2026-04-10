@@ -1,0 +1,16 @@
+model_list:
+  - model_name: gemini/*
+    litellm_params:
+      model: gemini/*
+      api_base: "http://geminicli2api:3400/v1beta"
+      api_key: os.environ/GCA_PASSWORD
+  - model_name: anthropic/*
+    litellm_params:
+      model: anthropic/*
+      api_base: "http://proxy:3456"
+      api_key: arbitrary
+
+general_settings:
+  master_key: os.environ/LITELLM_MASTER_KEY
+  database_url: "postgresql://llmproxy:dbpassword9090@db:5432/litellm"
+  forward_client_headers_to_llm_api: true
